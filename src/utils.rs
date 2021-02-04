@@ -1,3 +1,4 @@
+#[cfg(feature = "alloc")]
 use alloc::string::String;
 
 /// Calls a function and aborts if it panics.
@@ -55,6 +56,7 @@ pub fn random(n: u32) -> u32 {
 }
 
 /// Add additional context to errors
+#[cfg(feature = "alloc")]
 pub(crate) trait Context {
     fn context(self, message: impl Fn() -> String) -> Self;
 }
@@ -210,7 +212,7 @@ macro_rules! cfg_std {
     }
 }
 
-/// Declares no-std items.
+/// Declares no-std-but-stil-alloc items.
 #[allow(unused_macros)]
 #[doc(hidden)]
 macro_rules! cfg_alloc {

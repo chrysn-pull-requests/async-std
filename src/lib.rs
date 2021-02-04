@@ -284,8 +284,6 @@
 #![doc(html_logo_url = "https://async.rs/images/logo--hero.svg")]
 #![recursion_limit = "2048"]
 
-extern crate alloc;
-
 #[macro_use]
 mod utils;
 
@@ -297,9 +295,12 @@ pub use async_attributes::{main, test};
 #[cfg(feature = "std")]
 mod macros;
 
+
 cfg_alloc! {
-    pub mod task;
+    extern crate alloc;
+
     pub mod future;
+    pub mod task;
     pub mod stream;
 }
 
