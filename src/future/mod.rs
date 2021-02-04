@@ -46,10 +46,8 @@
 //! [`Future::race`]: trait.Future.html#method.race
 //! [`Future::try_race`]: trait.Future.html#method.try_race
 
-cfg_alloc! {
-    pub use future::Future;
-    pub(crate) mod future;
-}
+pub use future::Future;
+pub(crate) mod future;
 
 cfg_std! {
     pub use pending::pending;

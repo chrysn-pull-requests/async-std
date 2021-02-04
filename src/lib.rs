@@ -295,11 +295,11 @@ pub use async_attributes::{main, test};
 #[cfg(feature = "std")]
 mod macros;
 
+pub mod future;
 
 cfg_alloc! {
     extern crate alloc;
 
-    pub mod future;
     pub mod task;
     pub mod stream;
 }
