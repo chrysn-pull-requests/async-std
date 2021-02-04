@@ -11,14 +11,15 @@
 //! use async_std::prelude::*;
 //! ```
 
+#[doc(inline)]
+pub use crate::future::future::FutureExt;
+
 cfg_std! {
     #[doc(no_inline)]
     pub use std::future::Future;
     #[doc(no_inline)]
     pub use crate::stream::Stream;
 
-    #[doc(inline)]
-    pub use crate::future::future::FutureExt;
     #[doc(inline)]
     pub use crate::stream::stream::StreamExt;
     #[doc(no_inline)]

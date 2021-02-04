@@ -304,10 +304,10 @@ cfg_alloc! {
     pub mod stream;
 }
 
+pub mod prelude;
 cfg_std! {
     pub mod io;
     pub mod os;
-    pub mod prelude;
     pub mod sync;
     pub mod channel;
 }
